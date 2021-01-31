@@ -50,11 +50,11 @@ yarn start
 
 Made on the basis of video lessons - Classsed:
 
-- [GraphQL Server Series (MERNG)]
-- [React GraphQL App series (MERNG)]
+Part 1 - [GraphQL Server Series (MERNG)]
+Part 2 - [React GraphQL App series (MERNG)]
 
-  [graphql server series (merng)]: https://www.youtube.com/playlist?list=PLMhAeHCz8S3_CTiWMQhL6YxX7vZ7z84Zo
-  [react graphql app series (merng)]: https://www.youtube.com/playlist?list=PLMhAeHCz8S3_pgb-j51QnCEhXNj5oyl8n
+[graphql server series (merng)]: https://www.youtube.com/playlist?list=PLMhAeHCz8S3_CTiWMQhL6YxX7vZ7z84Zo
+[react graphql app series (merng)]: https://www.youtube.com/playlist?list=PLMhAeHCz8S3_pgb-j51QnCEhXNj5oyl8n
 
 © 2021 | SoNet - MERNG Project
 
