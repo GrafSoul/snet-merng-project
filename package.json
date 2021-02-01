@@ -1,0 +1,28 @@
+{
+  "name": "sonet-merng-project",
+  "version": "1.0.0",
+  "description": "A simple web application using the GraphQL query language and using the stack - React, React Hooks, Redux, Node, Express, MongoDB. It consists of the server and client parts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrafSoul/sonet-merng-project.git"
+  },
+  "keywords": [
+    "React",
+    "React",
+    "Hooks",
+    "Redux",
+    "Node",
+    "Express",
+    "MongoDB"
+  ],
+  "author": "Dmitriy Zatulovskiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GrafSoul/sonet-merng-project/issues"
+  },
+  "homepage": "https://github.com/GrafSoul/sonet-merng-project#readme"
+}
