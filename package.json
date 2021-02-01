@@ -2,8 +2,11 @@
   "name": "sonet-merng-project",
   "version": "1.0.0",
   "description": "A simple web application using the GraphQL query language and using the stack - React, React Hooks, Redux, Node, Express, MongoDB. It consists of the server and client parts.",
-  "main": "index.js",
+  "main": "./server/index.js",
+  "type": "module",
   "scripts": {
+    "dev": "nodemon ./server/index.js",
+    "start": "PROD=true node ./server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +27,14 @@
   "bugs": {
     "url": "https://github.com/GrafSoul/sonet-merng-project/issues"
   },
-  "homepage": "https://github.com/GrafSoul/sonet-merng-project#readme"
+  "homepage": "https://github.com/GrafSoul/sonet-merng-project#readme",
+  "dependencies": {
+    "apollo-server": "^2.19.2",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.5.0",
+    "mongoose": "^5.11.14"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
