@@ -4,8 +4,8 @@ dotenv.config();
 
 // GraphQL Core
 import { ApolloServer } from 'apollo-server';
-import typeDefs from "./graphql/typeDefs.js";
-import resolvers from "./resolvers/index.js";
+import typeDefs from './graphql/typeDefs.js';
+import resolvers from './resolvers/index.js';
 
 // MongoDB Core
 import mongoose from 'mongoose';
@@ -15,19 +15,24 @@ const CONNECT_URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_USER_
 const PORT = process.env.PORT || 5000;
 
 const server = new ApolloServer({
-    typeDefs, resolvers
-})
+    typeDefs,
+    resolvers,
+    context: ({ req }) => ({ req }),
+});
 
-mongoose.connect(CONNECT_URL, { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose
+    .connect(CONNECT_URL, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(() => {
         console.log(`**************************************`);
         console.log(`MongoDB Connected! Successful!`);
-        server.listen({port: PORT});
-    }).then(() => {
+        server.listen({ port: PORT });
+    })
+    .then(() => {
         console.log(`**************************************`);
         console.log(`Server is running on port: ${PORT}`);
         console.log(`URL address: http://localhost:${PORT}`);
         console.log(`**************************************`);
-    }).catch(error => {
-        console.log(error)
+    })
+    .catch((error) => {
+        console.log(error);
     });
