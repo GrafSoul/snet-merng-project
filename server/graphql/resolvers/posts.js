@@ -1,7 +1,7 @@
 // Models
-import Post from '../models/Post.js';
+import Post from '../../models/Post.js';
 // Utils
-import checkAuth from '../utils/checkAuth.js';
+import checkAuth from '../../utils/checkAuth.js';
 
 export default {
     Query: {

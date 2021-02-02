@@ -5,7 +5,7 @@ dotenv.config();
 // GraphQL Core
 import { ApolloServer } from 'apollo-server';
 import typeDefs from './graphql/typeDefs.js';
-import resolvers from './resolvers/index.js';
+import resolvers from './graphql/resolvers/index.js';
 
 // MongoDB Core
 import mongoose from 'mongoose';

@@ -10,10 +10,10 @@ dotenv.config();
 import {
     validateRegisterInput,
     validateLoginInput,
-} from '../utils/validators.js';
+} from '../../utils/validators.js';
 
 // Model
-import User from '../models/User.js';
+import User from '../../models/User.js';
 
 const SECRET_KEY = process.env.SECRET_KEY;
 
