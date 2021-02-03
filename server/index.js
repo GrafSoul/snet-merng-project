@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // GraphQL Core
-import { ApolloServer } from 'apollo-server';
+import { ApolloServer, PubSub } from 'apollo-server';
 import typeDefs from './graphql/typeDefs.js';
 import resolvers from './graphql/resolvers/index.js';
 
@@ -14,10 +14,12 @@ import mongoose from 'mongoose';
 const CONNECT_URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_USER_PASSWORD}@${process.env.DB_CLUSTER}.nvckw.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const PORT = process.env.PORT || 5000;
 
+const pubsub = new PubSub();
+
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: ({ req }) => ({ req }),
+    context: ({ req }) => ({ req, pubsub }),
 });
 
 mongoose
