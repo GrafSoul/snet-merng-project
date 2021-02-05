@@ -7,30 +7,31 @@ import { Link } from 'react-router-dom';
 import { Card, Icon, Label, Image, Button } from 'semantic-ui-react';
 
 function PostCard({
-    post: { id, body, username, createdAt, likes, likeCount, commentCount },
+    post: { body, createdAt, id, username, likeCount, commentCount, likes },
 }) {
-    const handleLikePost = () => {
-        console.log('Like Post!');
-    };
+    function likePost() {
+        console.log('Like post!!');
+    }
 
-    const handleCommentOnPost = () => {
-        console.log('Comment Post!');
-    };
-
+    function commentOnPost() {
+        console.log('Comment on post!!');
+    }
     return (
         <Card fluid>
-            <Card.Content as={Link} to={`/post/${id}`}>
+            <Card.Content>
                 <Image
                     floated="right"
                     size="mini"
-                    src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
+                    src="https://react.semantic-ui.com/images/avatar/large/molly.png"
                 />
                 <Card.Header>{username}</Card.Header>
-                <Card.Meta>{moment(createdAt).fromNow(true)}</Card.Meta>
+                <Card.Meta as={Link} to={`/posts/${id}`}>
+                    {moment(createdAt).fromNow(true)}
+                </Card.Meta>
                 <Card.Description>{body}</Card.Description>
             </Card.Content>
             <Card.Content extra>
-                <Button as="div" labelPosition="right" onClick={handleLikePost}>
+                <Button as="div" labelPosition="right" onClick={likePost}>
                     <Button color="teal" basic>
                         <Icon name="heart" />
                     </Button>
@@ -38,11 +39,7 @@ function PostCard({
                         {likeCount}
                     </Label>
                 </Button>
-                <Button
-                    as="div"
-                    labelPosition="right"
-                    onClick={handleCommentOnPost}
-                >
+                <Button as="div" labelPosition="right" onClick={commentOnPost}>
                     <Button color="blue" basic>
                         <Icon name="comments" />
                     </Button>
