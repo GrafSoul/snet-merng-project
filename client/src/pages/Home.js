@@ -4,7 +4,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 // Styles
-import { Grid } from 'semantic-ui-react';
+import { Grid, Loader } from 'semantic-ui-react';
 // Components
 import PostCard from '../components/PostCard';
 
@@ -21,7 +21,9 @@ function Home() {
             </Grid.Row>
             <Grid.Row>
                 {loading ? (
-                    <h1>Loading posts..</h1>
+                    <Grid.Row className="page-loader">
+                        <Loader active />
+                    </Grid.Row>
                 ) : (
                     posts &&
                     posts.map((post) => (
