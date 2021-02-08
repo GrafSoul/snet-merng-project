@@ -27,9 +27,9 @@ npm install
 yarn install
 
 // Starting local server for development.
-npm dev
+npm server
 // or
-yarn dev
+yarn server
 
 // Go to the client folder.
 cd sonet-merng-project/client
