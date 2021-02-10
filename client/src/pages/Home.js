@@ -1,14 +1,18 @@
 // Core
-import React from 'react';
+import React, { useContext } from 'react';
 // GraphQL
 import { useQuery } from '@apollo/react-hooks';
 import { FETCH_POSTS_QUERY } from '../utils/graphql';
-// Styles
-import { Grid, Loader, Transition } from 'semantic-ui-react';
+// Auth
+import { AuthContext } from '../context/auth';
 // Components
 import PostCard from '../components/PostCard';
+import PostForm from '../components/PostForm';
+// Styles
+import { Grid, Loader, Transition } from 'semantic-ui-react';
 
 function Home() {
+    const { user } = useContext(AuthContext);
     const {
         loading,
         data: { getPosts: posts },
@@ -20,6 +24,11 @@ function Home() {
                 <h1>Recent Posts</h1>
             </Grid.Row>
             <Grid.Row>
+                {user && (
+                    <Grid.Column>
+                        <PostForm />
+                    </Grid.Column>
+                )}
                 {loading ? (
                     <Grid.Row className="page-loader">
                         <Loader active />
