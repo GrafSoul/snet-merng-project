@@ -1,10 +1,10 @@
 // Core
 import React from 'react';
 // GraphQL
-import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
+import { FETCH_POSTS_QUERY } from '../utils/graphql';
 // Styles
-import { Grid, Loader } from 'semantic-ui-react';
+import { Grid, Loader, Transition } from 'semantic-ui-react';
 // Components
 import PostCard from '../components/PostCard';
 
@@ -25,38 +25,21 @@ function Home() {
                         <Loader active />
                     </Grid.Row>
                 ) : (
-                    posts &&
-                    posts.map((post) => (
-                        <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
-                            <PostCard post={post} />
-                        </Grid.Column>
-                    ))
+                    <Transition.Group>
+                        {posts &&
+                            posts.map((post) => (
+                                <Grid.Column
+                                    key={post.id}
+                                    style={{ marginBottom: 20 }}
+                                >
+                                    <PostCard post={post} />
+                                </Grid.Column>
+                            ))}
+                    </Transition.Group>
                 )}
             </Grid.Row>
         </Grid>
     );
 }
-
-const FETCH_POSTS_QUERY = gql`
-    {
-        getPosts {
-            id
-            body
-            createdAt
-            username
-            likeCount
-            likes {
-                username
-            }
-            commentCount
-            comments {
-                id
-                username
-                createdAt
-                body
-            }
-        }
-    }
-`;
 
 export default Home;
