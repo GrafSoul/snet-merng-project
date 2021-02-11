@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/auth';
 // Styles
 import { Card, Icon, Label, Image, Button } from 'semantic-ui-react';
-
 // Components
 import LikeButton from './LikeButton';
 import DeleteButton from './DeleteButton';
