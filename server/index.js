@@ -1,5 +1,7 @@
 // Environment
+import path from 'path';
 import dotenv from 'dotenv';
+import express from 'express';
 dotenv.config();
 
 // GraphQL Core
@@ -10,9 +12,21 @@ import resolvers from './graphql/resolvers/index.js';
 // MongoDB Core
 import mongoose from 'mongoose';
 
+// Express
+const app = express();
+
 // Parameters
 const CONNECT_URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_USER_PASSWORD}@${process.env.DB_CLUSTER}.nvckw.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const PORT = process.env.PORT || 5000;
+const __dirname = path.resolve();
+
+// Load App Page
+if (process.env.PROD) {
+    app.use(express.static(path.join(__dirname, './client/build')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, './client/build/index.html'));
+    });
+}
 
 const pubsub = new PubSub();
 

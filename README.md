@@ -1,11 +1,9 @@
-# SoNet - MERNG Project (React, React Hooks, Redux, Node, Express, MongoDB)
+# SoNet - MERNG Project (React, React Hooks, Node, Express, MongoDB)
 
-## Do not use! The project is under development
-
-A simple web application using the GraphQL query language and using the stack - React, React Hooks, Redux, Node, Express, MongoDB. It consists of the server and client parts.
+A simple web application using the GraphQL query language and using the stack - React, React Hooks, Node, Express, MongoDB. It consists of the server and client parts.
 
 <!-- ### Demo
-Heroku Hosting - [MCards] -->
+Heroku Hosting -  -->
 
 ### Clone, Install, Development & Start
 

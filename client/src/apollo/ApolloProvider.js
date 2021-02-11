@@ -9,8 +9,13 @@ import { setContext } from 'apollo-link-context';
 // Component
 import App from '../App';
 
+const baseURL =
+    window.location.href === 'http://localhost:3000'
+        ? 'http://localhost:5000'
+        : window.location.href;
+
 const httpLink = createHttpLink({
-    uri: 'http://localhost:5000',
+    uri: baseURL,
 });
 
 const authLink = setContext(() => {
