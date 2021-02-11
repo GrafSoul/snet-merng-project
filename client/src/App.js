@@ -7,7 +7,7 @@ import MenuBar from './components/MenuBar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import SinglePost from './pages/Register';
+import SinglePost from './pages/SinglePost';
 // Auth
 import { AuthProvider } from './context/auth';
 import AuthRoute from './utils/AuthRoute';
