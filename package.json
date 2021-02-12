@@ -31,7 +31,10 @@
   "homepage": "https://github.com/GrafSoul/sonet-merng-project#readme",
   "dependencies": {
     "apollo-server": "^2.19.2",
+    "apollo-server-express": "^2.21.0",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "graphql": "^15.5.0",
     "jsonwebtoken": "^8.5.1",

@@ -11,8 +11,8 @@ import App from '../App';
 
 const baseURL =
     window.location.href === 'http://localhost:3000'
-        ? 'http://localhost:5000'
-        : window.location.href;
+        ? 'http://localhost:5000/api'
+        : window.location.href + 'api';
 
 const httpLink = createHttpLink({
     uri: baseURL,
