@@ -2,8 +2,9 @@
 
 A simple web application using the GraphQL query language and using the stack - React, React Hooks, Node, Express, MongoDB. It consists of the server and client parts.
 
-<!-- ### Demo
-Heroku Hosting -  -->
+### Demo
+
+Heroku Hosting - [SoNet]
 
 ### Clone, Install, Development & Start
 
@@ -58,5 +59,4 @@ Part 2 - [React GraphQL App series (MERNG)]
 
 [nodejs]: https://nodejs.org/
 [yarn]: https://yarnpkg.com/
-
-<!-- [snet]: https://**************.herokuapp.com/ -->
+[sonet]: https://sonetapp.herokuapp.com/
